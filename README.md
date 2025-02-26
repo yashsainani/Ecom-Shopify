@@ -3,6 +3,8 @@
 ## Project Overview
 This React app implements a simple e-commerce platform where users can log in, browse products, view product details, manage users, and navigate through different pages. The app uses Redux for state management and integrates with several external APIs to fetch product and user data.
 
+[DEMO LINK](ecom-shopify-pi.vercel.app)
+
 ## Features
 - **Login Page**: User authentication where credentials are validated before access to the app.
 - **Home Page**: Displays basic information and serves as the entry point after successful login.
