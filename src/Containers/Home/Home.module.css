@@ -1,0 +1,41 @@
+.home {
+    background: linear-gradient(120deg, #040220, #8e0e00 150%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    min-height: 100vh;
+    width: 100%;
+    padding: 5rem;
+    padding-top: 15rem;
+}
+
+.home > h1 {
+    font-size: 4rem;
+    font-weight: 600;
+    color: white;
+}
+
+.home > p {
+    font-size: 1.8rem;
+    color: white;
+    text-align: justify;
+}
+
+.home > button {
+    background-color: transparent;
+    border: 2px solid dodgerblue;
+    border-radius: 5px;
+    color: dodgerblue;
+    cursor: pointer;
+    width: 100%;
+    max-width: 20rem;
+    padding: 1rem;
+}
+
+@media screen and (max-width: 500px) {
+    .home {
+        padding: 2rem;
+    }
+}
