@@ -26,7 +26,7 @@ const Products = () => {
     };
 
     useEffect(() => {
-        userCredentialChk();
+        if(!userCredentialChk()) navigate('/');
         fetchData();
         newItem('electronics');
     }, []);

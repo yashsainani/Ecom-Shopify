@@ -1,7 +1,9 @@
-import { useParams } from "react-router-dom";
-import styles from "./ProductDetails.module.css";
+import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
+
+import styles from "./ProductDetails.module.css";
+import userCredentialChk from "../../utils/userCredential";
 
 const ProductDetails = () => {
 
@@ -9,11 +11,13 @@ const ProductDetails = () => {
     id = parseInt(id);
     const products = useSelector(state => state.products.products);
     const [item, setItem] = useState({});
+    const navigate = useNavigate();
 
     useEffect(() => {
+        if(!userCredentialChk()) navigate('/');
         const val = products.find(ele => ele.id === id);
         setItem(val);
-    }, [products])
+    }, [])
 
     return (
         <section className={styles['product-details']}>

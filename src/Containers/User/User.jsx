@@ -1,17 +1,21 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 import styles from "./User.module.css";
 import { addUsers } from "../../Slices/Products";
+import userCredentialChk from "../../utils/userCredential";
 
 const User = () => {
 
     const ProductsUser = useSelector(state => state.products.users);
     const [user, setUser] = useState(ProductsUser);
     const dispatch = useDispatch();
+    const navigate = useNavigate()
 
     useEffect(() => {
+        if (!userCredentialChk()) navigate('/');
         const fetchData = async() => {
             const res = await axios.get('https://randomuser.me/api/?results=20');
             const data = res.data;
